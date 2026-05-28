@@ -1,0 +1,21 @@
+name: CI Example
+# Define when the workflow should run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # Specify the runner environment (Linux, Windows, or macOS)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a shell command
+      - name: Run a greeting
+        run: echo "Hello, world!"
